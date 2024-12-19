@@ -6,7 +6,7 @@ from .views import RecipeViewSet, CategoryViewSet, FeedbackViewSet, CategoryList
 router = DefaultRouter()
 router.register(r'recipes', RecipeViewSet)
 router.register(r'categories', CategoryViewSet)
-router.register(r'feedback', FeedbackViewSet)
+router.register(r'feedback', FeedbackViewSet, basename='feedback')
 
 # Include the router URLs in your app's URL patterns
 urlpatterns = [

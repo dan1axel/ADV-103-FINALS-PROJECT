@@ -46,4 +46,5 @@ class RecipeSerializer(serializers.ModelSerializer):
 class FeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Feedback
-        fields = '__all__'
+        fields = ['id', 'user', 'recipe', 'comment', 'rating']
+        read_only_fields = ['user']  # Prevent users from manually setting the user field

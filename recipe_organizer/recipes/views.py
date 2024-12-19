@@ -1,6 +1,7 @@
 # recipes/views.py
 from rest_framework import viewsets, permissions, status
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.viewsets import ModelViewSet
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import action
@@ -81,8 +82,26 @@ class CategoryViewSet(viewsets.ModelViewSet):
         return Response({'error': 'Category name is required'}, status=status.HTTP_400_BAD_REQUEST)
 
 class FeedbackViewSet(viewsets.ModelViewSet):
-    queryset = Feedback.objects.all()
     serializer_class = FeedbackSerializer
+
+    def get_queryset(self):
+        """
+        Optionally filters the feedback by recipe ID passed as a query parameter.
+        """
+        recipe_id = self.request.query_params.get('recipe', None)
+        if recipe_id:
+            # If recipe_id is provided, filter feedback by recipe
+            return Feedback.objects.filter(recipe_id=recipe_id)
+        else:
+            # If no recipe_id is provided, return all feedback (not recommended for production)
+            return Feedback.objects.all()
+
+    def perform_create(self, serializer):
+        """
+        Overriding perform_create to associate the feedback with the current user.
+        """
+        serializer.save(user=self.request.user)
+
 
 class CategoryListView(APIView):
     permission_classes = [AllowAny]  # Allow access to anyone, even unauthenticated users
@@ -116,3 +135,6 @@ class RecipeViewSet(viewsets.ModelViewSet):
             return Response(serializer.errors, status=400)
         serializer.save()
         return Response(serializer.data)
+    
+
+    
