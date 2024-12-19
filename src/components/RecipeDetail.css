@@ -1,0 +1,185 @@
+/* Styling for Recipe Detail page */
+.recipe-detail-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-title {
+  text-align: center;
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.recipe-info {
+  font-size: 18px;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.recipe-info strong {
+  color: #2980b9;
+}
+
+.recipe-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.delete-button,
+.back-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.delete-button:hover,
+.back-button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Back Button Styling */
+.back-button {
+  background-color: #3498db;
+}
+
+.delete-button:disabled,
+.back-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Feedback Section */
+.feedback-section {
+  margin-top: 40px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-section h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #34495e;
+}
+
+.feedback-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.rating-section {
+  margin: 10px 0;
+}
+
+.rating-section label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.rating-section input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit-feedback-button {
+  padding: 10px 15px;
+  background-color: #27ae60; /* Success button color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-feedback-button:hover {
+  background-color: #1e8449; /* Darker shade */
+  transform: scale(1.05);
+}
+
+.feedback-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #2ecc71; /* Success message color */
+}
+
+/* Display Submitted Feedback */
+.recipe-feedback {
+  margin-top: 30px;
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-feedback .feedback-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.recipe-feedback .feedback-item:last-child {
+  border-bottom: none;
+}
+
+.recipe-feedback .feedback-item p {
+  margin: 5px 0;
+}
+
+.recipe-feedback .feedback-item .comment {
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .recipe-detail-container {
+    padding: 20px;
+  }
+
+  .recipe-info {
+    font-size: 16px;
+  }
+
+  .recipe-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .feedback-section textarea {
+    font-size: 12px;
+  }
+
+  .rating-section input {
+    width: 40px;
+  }
+
+  .recipe-feedback {
+    padding: 15px;
+  }
+
+  .recipe-feedback .feedback-item {
+    font-size: 14px;
+  }
+}

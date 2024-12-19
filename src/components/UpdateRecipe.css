@@ -1,0 +1,89 @@
+/* Styling for the Update Recipe page */
+.update-recipe-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.update-recipe-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.update-form input,
+.update-form textarea,
+.update-form select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.update-form input:focus,
+.update-form textarea:focus,
+.update-form select:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+.update-form button {
+  padding: 14px;
+  font-size: 18px;
+  color: white;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.update-form button:hover {
+  background-color: #2980b9;
+}
+
+.update-form .back-button {
+  padding: 14px;
+  font-size: 18px;
+  color: white;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.update-form .back-button:hover {
+  background-color: #c0392b;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .update-recipe-container {
+    padding: 20px;
+  }
+
+  .update-recipe-container h2 {
+    font-size: 24px;
+  }
+
+  .update-form button {
+    font-size: 16px;
+  }
+}

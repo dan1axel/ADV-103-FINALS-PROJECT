@@ -1,0 +1,102 @@
+/* Container for the Add Recipe page */
+.add-recipe-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #f7f9fc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading */
+  .add-recipe-container h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Back Button */
+  .back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+  }
+  
+  /* Message after submitting */
+  .message {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  /* Form styling */
+  .recipe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Input fields */
+  input[type="text"],
+  textarea,
+  select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    background-color: #fff;
+    resize: vertical;
+  }
+  
+  /* Textarea resizing */
+  textarea {
+    min-height: 100px;
+  }
+  
+  /* Submit button */
+  .submit-button {
+    padding: 15px;
+    font-size: 18px;
+    color: white;
+    background-color: #2980b9;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #1f6b91;
+    transform: scale(1.05);
+  }
+  
+  .submit-button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .add-recipe-container {
+      padding: 20px;
+    }
+  
+    .recipe-form {
+      gap: 15px;
+    }
+  }
+  

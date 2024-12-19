@@ -1,0 +1,165 @@
+/* Main wrapper for the full page */
+.page-wrapper {
+  width: 100%;
+  height: 110vh; /* Full screen height */
+  background-image: url('./images/background.jpg');
+  background-size: cover; /* Ensure the image covers the entire screen */
+  background-position: center; /* Center the image */
+  position: relative;
+  color: white; /* White text for better contrast on background */
+}
+
+/* Dark overlay on background for text visibility */
+.page-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Slightly dark overlay to improve readability */
+  z-index: -1; /* Ensure the overlay is behind the content */
+}
+
+/* Main container for the recipe list page */
+.recipe-list-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 30px;
+  background-image: url('./images/conatiner1.jpg');
+  background-color: rgba(255, 255, 255, 0.8); /* Improved transparency for better text visibility */
+  background-size: cover; /* Ensure the image covers the entire screen */
+  border-radius: 15px;
+  min-height: 100vh; /* Ensure the container covers the entire viewport height */
+  position: relative;
+  z-index: 1; /* Ensure content is on top of background */
+  color: white; /* White text for better contrast */
+}
+
+/* Greeting heading */
+.greeting {
+  font-size: 50px;
+  color: #e1e2f0;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Aerial', sans-serif;
+}
+
+/* Buttons */
+.back-button,
+.add-recipe-button,
+.delete-button,
+.view-button,
+.update-button {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 12px 25px;
+  font-size: 16px;
+  color: white;
+  background-color: #2980b9;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+}
+
+.back-button:hover,
+.add-recipe-button:hover,
+.delete-button:hover,
+.view-button:hover,
+.update-button:hover {
+  background-color: #1f6b91;
+  transform: scale(1.05);
+}
+
+/* Recipe list layout */
+.recipe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Recipe panel styling */
+.recipe-panel {
+  background-color: #fff;
+  background-size: cover;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.recipe-panel:hover {
+  transform: translateY(-5px);
+}
+
+/* Recipe title */
+.recipe-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Recipe description */
+.recipe-description {
+  color: #7f8c8d;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Recipe action buttons */
+.recipe-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Delete button styling */
+.delete-button {
+  padding: 10px 18px;
+  font-size: 14px;
+  color: white;
+  background-color: #e74c3c; /* Red color for the delete button */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover effects for delete button */
+.delete-button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Error and no recipes message styling */
+.error-message,
+.no-recipes {
+  text-align: center;
+  font-size: 18px;
+  color: #e74c3c; /* Error color */
+}
+
+/* Responsive design: When screen size is less than 768px, switch to a single column layout */
+@media (max-width: 768px) {
+  .recipe-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .recipe-panel {
+    padding: 20px;
+  }
+
+  .greeting {
+    font-size: 24px;
+  }
+
+  .back-button,
+  .add-recipe-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
